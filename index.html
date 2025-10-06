@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monish KP - Full Stack Developer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 60px 20px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: shine 3s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        50%,
+        100% {
+          left: 100%;
+        }
+      }
+
+      header h1 {
+        font-size: 3em;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s ease;
+      }
+
+      header p {
+        font-size: 1.3em;
+        color: #666;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease 0.3s both;
+      }
+
+      header img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid #667eea;
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        animation: fadeInScale 1s ease 0.6s both;
+        transition: transform 0.3s ease;
+      }
+
+      header img:hover {
+        transform: scale(1.05) rotate(5deg);
+      }
+
+      section {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 1s ease;
+      }
+
+      section h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+      }
+
+      section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        margin: 15px auto;
+        border-radius: 2px;
+      }
+
+      .about-content {
+        text-align: center;
+        font-size: 1.1em;
+        color: #555;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      article {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      article:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+      }
+
+      article img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      article:hover img {
+        transform: scale(1.1);
+      }
+
+      article h3 {
+        padding: 20px;
+        font-size: 1.5em;
+        color: #667eea;
+      }
+
+      article p {
+        padding: 0 20px 20px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        list-style: none;
+        margin-top: 40px;
+      }
+
+      .skills-grid li {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 1.1em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .skills-grid li:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+      }
+
+      .skills-grid li i {
+        display: block;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .contact-info {
+        text-align: center;
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style: none;
+        flex-wrap: wrap;
+        margin: 30px 0;
+      }
+
+      .contact-links li {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        padding: 15px 30px;
+        border-radius: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .contact-links li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+      }
+
+      .contact-links li i {
+        margin-right: 8px;
+      }
+
+      .contact-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 30px auto;
+      }
+
+      form label {
+        display: block;
+        margin: 20px 0 8px;
+        color: #667eea;
+        font-weight: 600;
+        font-size: 1.1em;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 1em;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        font-family: inherit;
+      }
+
+      form input:focus,
+      form textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      form button {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      form button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2em;
+        }
+
+        section h2 {
+          font-size: 2em;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Monish KP</h1>
+      <p>Full Stack Web Developer</p>
+      <img src="photo.png" alt="Monish KP Profile Photo" />
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          I'm Monish KP, a passionate Computer Science Engineering student
+          driven by a deep interest in technology and innovation. I'm mastering
+          Full Stack Development using React.js, Node.js, PostgreSQL, and React
+          Native, while also strengthening my Data Structures and Algorithms
+          skills in Java. Alongside, I'm exploring Generative AI and Agentic AI
+          to stay ahead in the rapidly evolving tech landscape. My ultimate goal
+          is to secure a role at a top tech company like Google or Microsoft.
+          Focused, strategic, and curious, I'm building the skills to become a
+          top-tier software engineer and problem solver.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article>
+          <img src="port.jpg" alt="Portfolio Website Project" />
+          <h3>Portfolio Website</h3>
+          <p>
+            Built a full-stack app using React.js, Django, PostgreSQL, and
+            Flutter. Added secure login, responsive UI, and real-time features.
+            Integrated basic AI for smarter user interaction. Focused on
+            performance, scalability, and clean design.
+          </p>
+        </article>
+        <article>
+          <img
+            src="https://tse3.mm.bing.net/th/id/OIP.YiiVg7ESQZ8-Be5rb6nTAAHaFj?pid=Api&P=0&h=180"
+            alt="Web Design Project"
+          />
+          <h3>Web Design</h3>
+          <p>
+            Built a full-stack app using React.js, Django, PostgreSQL, and
+            Flutter. Added secure login, responsive UI, and real-time features.
+            Integrated basic AI for smarter user interaction. Focused on
+            performance, scalability, and clean design.
+          </p>
+        </article>
+        <article>
+          <img
+            src="https://tse3.mm.bing.net/th/id/OIP.U5XCw5CCMMCviUPL2IPwywHaE0?pid=Api&P=0&h=180"
+            alt="AI Design Project"
+          />
+          <h3>AI Design</h3>
+          <p>
+            Built a full-stack app using React.js, Django, PostgreSQL, and
+            Flutter. Added secure login, responsive UI, and real-time features.
+            Integrated basic AI for smarter user interaction. Focused on
+            performance, scalability, and clean design.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills-grid">
+        <li><i class="fa-brands fa-html5"></i>HTML</li>
+        <li><i class="fa-brands fa-css3"></i>CSS</li>
+        <li><i class="fa-brands fa-python"></i>Python</li>
+        <li><i class="fa-brands fa-java"></i>Java</li>
+        <li><i class="fa-brands fa-react"></i>React.js</li>
+        <li><i class="fa-brands fa-node-js"></i>Node.js</li>
+        <li><i class="fa-solid fa-code"></i>Express.js</li>
+        <li><i class="fa-solid fa-database"></i>PostgreSQL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p class="contact-info">
+        I'm always open to exciting collaborations, internships, or full-time
+        opportunities in tech. Feel free to reach out for discussions on Full
+        Stack Development, AI projects, or app ideas.
+      </p>
+      <ul class="contact-links">
+        <li>
+          <i class="fa-regular fa-envelope"></i
+          ><a href="mailto:monishkp2006@gmail.com">monishkp2006@gmail.com</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-linkedin"></i
+          ><a href="https://www.linkedin.com/in/monish-k-p-795b97317"
+            >LinkedIn Profile</a
+          >
+        </li>
+        <li><i class="fa-brands fa-github"></i><a href="#">GitHub</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact Form</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          const subject = `Portfolio Contact from ${name}`;
+          const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(
+            message
+          )}`;
+
+          window.location.href = `mailto:monishkp2006@gmail.com?subject=${encodeURIComponent(
+            subject
+          )}&body=${body}`;
+        });
+    </script>
+  </body>
+</html>
