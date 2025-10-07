@@ -10,7 +10,98 @@
     />
     <title>Profile Card</title>
     <link rel="stylesheet" href="style.css" />
-    <style></style>
+    <style>
+      body {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 100vh;
+  align-items: center;
+  background-color: aliceblue;
+}
+.profile-card {
+  display: flex;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px black;
+  max-width: 550px;
+  width: 100%;
+}
+
+.profile-sidebar {
+  background-color: black;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+.profile-photo {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
+.profile-main {
+  padding: 10px;
+}
+h2 {
+  margin: 10px;
+}
+.job-title {
+  font-size: 18px;
+}
+.bio {
+  font-size: 18px;
+}
+.contact-info {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.contact-info {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.social-link {
+  color: black;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.skills {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+.skill {
+  background-color: rgb(173, 204, 19);
+  padding: 5px;
+  border-radius: 20%;
+  color: #1a2374;
+  font-weight: bold;
+  font-size: 15px;
+}
+.cta-button {
+  background-color: rgb(110, 45, 45);
+  color: aliceblue;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100;
+  margin-top: 20px;
+  margin-left: 29%;
+}
+.cta-button:hover {
+  background-color: rgb(126, 39, 192);
+}
+
+    </style>
   </head>
   <body>
     <!--profile card-->
