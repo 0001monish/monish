@@ -1,87 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My First HTML Page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        background-color: #f9f9f9ee;
-        color: #333;
-      }
-      header {
-        background-color: #0078ff;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-      nav {
-        background-color: #0056b3;
-        padding: 10px;
-        text-align: center;
-      }
-      nav a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      main {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 0 20px;
-      }
-      img {
-        display: block;
-        margin: 20px auto;
-        width: 300px;
-        border-radius: 10px;
-      }
-      footer {
-        background-color: #0078ff;
-        color: white;
-        text-align: center;
-        padding: 15px;
-        margin-top: 40px;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
   </head>
-
   <body>
-    <!-- Header Section -->
-    <header>
-      <h1>My First HTML Page</h1>
-    </header>
+    <!--profile card-->
+    <div class="profile-card">
+      <!--side bar-->
+      <div class="profile-sidebar">
+        <img src="photo.png" alt="monish profile" class="profile-photo" />
+        <h1>Monish KP</h1>
+        <p class="job-title">Full Stack web Developer</p>
+        <p class="company">Google</p>
+      </div>
+      <!--side bar end-->
+      <!--Main-->
+      <div class="profile-main">
+        <p class="bio">
+          Built a full-stack app using React.js, Node.js, PostgreSQL, and React
+          Native. Added secure login, responsive UI, and real-time features.
+          Integrated basic AI for smarter user interaction
+        </p>
+        <div class="contact-info">
+          <p>monish@2398gmail.com • Mysore</p>
+        </div>
+        <!--social links-->
+        <div class="social-link">
+          <a href=""><i class="fa-brands fa-linkedin"></i></a>
+          <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+          <a href=""><i class="fa-brands fa-github"></i></a>
+        </div>
+        <!--skills-->
+        <div class="skills">
+          <span class="skill">Javascript</span>
+          <span class="skill">React.js</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">MongoDB</span>
+          <span class="skill">React Native</span>
+        </div>
+        <!--Button-->
+        <button onclick="goToPage()" class="cta-button">
+          View Full Profile
+        </button>
 
-    <!-- Navigation Bar -->
-    <nav>
-      <a href="#">Home</a>
-      <a href="https://www.example.com" target="_blank">External Site</a>
-    </nav>
-
-    <!-- Main Content -->
-    <main>
-      <p>
-        Learning HTML has been an exciting journey! I have explored how to
-        structure web pages using various tags, including headings, paragraphs,
-        links, images, and lists. Understanding HTML is the foundation of web
-        development, and I’m enjoying building simple web pages step by step.
-      </p>
-
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
-        alt="HTML5 Logo"
-      />
-    </main>
-
-    <!-- Footer -->
-    <footer>Monish KP &copy; 2024</footer>
+        <script>
+          function goToPage() {
+            window.location.href = "index.html"; // redirects to contact.html
+          }
+        </script>
+      </div>
+      <!--Main end-->
+    </div>
+    <!--profile card end-->
   </body>
 </html>
