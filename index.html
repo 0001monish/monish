@@ -12,6 +12,40 @@
       referrerpolicy="no-referrer"
     />
     <style>
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        color: #e0e0e0;
+      }
+      .nav-links li {
+        margin-left: 40px;
+      }
+      .nav-links {
+        text-decoration: none;
+        color: white;
+        font-weight: 500px;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+      }
+      .nav-links a:hover {
+        color: rgb(171, 215, 29);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -20,13 +54,18 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: #333;
+        background: linear-gradient(
+            135deg,
+            rgba(75, 123, 236, 0.5),
+            rgba(67, 206, 162, 0.7)
+          ),
+          url("tech.jpg");
+        color: black;
         line-height: 1.6;
         overflow-x: hidden;
       }
 
-      header {
+      .header {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         padding: 60px 20px;
@@ -36,7 +75,7 @@
         overflow: hidden;
       }
 
-      header::before {
+      .header::before {
         content: "";
         position: absolute;
         top: 0;
@@ -345,12 +384,25 @@
   </head>
   <body>
     <header>
+      <div class="container">
+        <nav>
+          <div class="logo">Profile</div>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <header class="header">
       <img src="photo.png" alt="Monish KP Profile Photo" />
       <h1>Monish KP</h1>
       <p>Full Stack Web Developer</p>
     </header>
 
-    <section>
+    <section id="about">
       <h2>About Me</h2>
       <div class="about-content">
         <p>
@@ -367,7 +419,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
       <div class="projects-grid">
         <article>
@@ -409,7 +461,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <ul class="skills-grid">
         <li><i class="fa-brands fa-html5"></i>HTML</li>
@@ -423,7 +475,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
       <p class="contact-info">
         I'm always open to exciting collaborations, internships, or full-time
