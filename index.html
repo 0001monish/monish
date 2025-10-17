@@ -219,29 +219,33 @@
         z-index: 1;
       }
 
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1.25rem;
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--glass-border);
-        border-radius: 50px;
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        animation: fadeInDown 0.8s ease;
-      }
-
-      .hero-badge .status-dot {
-        width: 8px;
-        height: 8px;
-        background: #10b981;
+      .hero-image {
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
-        animation: pulse 2s ease-in-out infinite;
+        border: 4px solid var(--glass-border);
+        box-shadow: 0 0 0 8px var(--glass-bg), var(--shadow-glow);
+        margin: 0 auto 2rem;
+        object-fit: cover;
+        animation: fadeInScale 1s ease both;
+        transition: transform 0.3s ease;
+        background: var(--accent-gradient);
       }
 
+      .hero-image:hover {
+        transform: scale(1.05) rotate(5deg);
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
       @keyframes pulse {
         0%,
         100% {
@@ -871,10 +875,7 @@
     <section class="hero">
       <div class="hero-grid"></div>
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          <span>Available for opportunities</span>
-        </div>
+        <img src="photo.png" alt="No image" class="hero-image" />
         <h1>Monish KP</h1>
         <p class="hero-subtitle">Full Stack & AI Developer</p>
         <p class="hero-description">
