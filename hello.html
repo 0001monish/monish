@@ -139,14 +139,13 @@
           <span class="skill">React Native</span>
         </div>
         <!--Button-->
-        <button onclick="goToPage()" class="cta-button">
-          View Full Profile
-        </button>
+        <button class="cta-button">View Full Profile</button>
 
         <script>
-          function goToPage() {
+          const button1 = document.querySelector(".cta-button");
+          button1.addEventListener("click", () => {
             window.location.href = "index.html"; // redirects to contact.html
-          }
+          });
         </script>
       </div>
       <!--Main end-->
